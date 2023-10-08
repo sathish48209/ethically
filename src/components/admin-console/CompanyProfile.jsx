@@ -8,7 +8,6 @@ import Button from "@mui/material/Button";
 import { Container, Divider, Stack } from "@mui/material";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
@@ -21,12 +20,12 @@ const captionStyles = {
 };
 
 const valueStyles = {
-  fontSize: "1.2rem",
+  fontSize: "1.1rem",
 };
 
 const CompanyProfile = () => {
   return (
-    <Container maxWidth="md" sx={{ my: 4, p: 0 }}>
+    <Container maxWidth="md" sx={{ py: 4 }}>
       <Paper
         elevation={3}
         sx={{
@@ -44,9 +43,9 @@ const CompanyProfile = () => {
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
-            sx={{ my: 4 }}
+            sx={{ mt: 4, mb: 2 }}
           >
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
               Company Information
             </Typography>
             <Button
@@ -59,7 +58,7 @@ const CompanyProfile = () => {
 
           <Grid
             container
-            rowSpacing={3}
+            rowSpacing={2}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
             <Grid item xs={6}>
@@ -110,9 +109,9 @@ const CompanyProfile = () => {
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
-            sx={{ my: 3 }}
+            sx={{ mt: 3, mb: 2 }}
           >
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
               Primary Contact
             </Typography>
             <Button
@@ -124,7 +123,7 @@ const CompanyProfile = () => {
           </Stack>
           <Grid
             container
-            rowSpacing={3}
+            rowSpacing={2}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
             <Grid item xs={6}>

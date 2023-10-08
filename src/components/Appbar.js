@@ -12,11 +12,24 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { Divider, Stack } from "@mui/material";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Company Profile", "Support", "Logout"];
+const settings = [
+  {
+    lable: "Company Profile",
+    path: "/companyprofile",
+  },
+  {
+    lable: "Support",
+    path: "#",
+  },
+  {
+    lable: "Logout",
+    path: "#",
+  },
+];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -161,7 +174,16 @@ function ResponsiveAppBar() {
                 <Divider />
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    <Typography textAlign="center">
+                      <Link
+                        to={setting.path}
+                        style={{
+                          textDecoration: "none",
+                        }}
+                      >
+                        {setting.lable}
+                      </Link>
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
